@@ -5,11 +5,12 @@
  */
 package com.mycompany.rechner;
 
-import com.sun.javafx.scene.control.skin.VirtualFlow;
+
 import java.util.ArrayList;
 
+
 /**
- *
+ * Factory für Rechenoperationsobjekte
  * @author markus
  */
 public class RechenoperatoionsFactory
@@ -22,17 +23,20 @@ public class RechenoperatoionsFactory
         this.rechenoperationen = new ArrayList<>();
         rechenoperationen.add(new Addieren());
         rechenoperationen.add(new Subtrahieren());
+        rechenoperationen.add(new Dividieren());
+        rechenoperationen.add(new Multiplizieren());
     }
 
-    public ARechenoperation liefereRechenoperation(String operataor)
+    public ARechenoperation liefereRechenoperation(String operator) throws Exception
     {
-        for (ARechenoperation rechenoperation : this.rechenoperationen)
+       for (ARechenoperation rechenoperation : this.rechenoperationen)
         {
-            if (rechenoperation.getOperator().equals(operataor))
+            if (rechenoperation.getOperator().equals(operator))
             {
                 return rechenoperation;
             }
         }
-       throw new IllegalArgumentException("Eingegebner Operant nicht verfügbar");
+        
+       throw new Exception("Eingegebner Operant nicht verfügbar");
     }
 }

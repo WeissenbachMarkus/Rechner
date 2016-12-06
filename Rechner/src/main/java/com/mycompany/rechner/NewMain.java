@@ -13,12 +13,11 @@ public class NewMain
 {
 
     /**
-     * @param args the command line arguments
+     * Main
      */
     public static void main(String[] args)
     {
-        Rechner rechner=new Rechner(new Eingabe(), new Output(),new RechenoperatoionsFactory());
-        
+        Rechner rechner=new Rechner(new Eingabe(), new Output(),new RechenoperatoionsFactory());  
         rechner.rechnen();
     }
     

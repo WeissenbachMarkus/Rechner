@@ -6,9 +6,11 @@
 package com.mycompany.rechner;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- *
+ * Kompositionsklasse Eingabe, Rechneoperation, Ausgabe
  * @author markus
  */
 public class Rechner
@@ -25,12 +27,23 @@ public class Rechner
         this.factory = factory;
     }
 
+    /**
+     * führt Eingabe, zuständige Rechenoperation
+     * und Ausgabe zusammen
+     */
     public void rechnen()
     {
         this.eingabe.abfrage();
-        ARechenoperation rechenoperation = this.factory.liefereRechenoperation(eingabe.getOperator());
-        double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
-        this.output.ausfuehren(ergebnis);
+        ARechenoperation rechenoperation;
+        try
+        {
+            rechenoperation = this.factory.liefereRechenoperation(eingabe.getOperator());
+            double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
+            this.output.ausfuehren(ergebnis);
+        } catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
 
     }
 

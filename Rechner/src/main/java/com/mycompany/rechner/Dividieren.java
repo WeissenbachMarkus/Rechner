@@ -6,18 +6,19 @@
 package com.mycompany.rechner;
 
 /**
- * Definiert Rechenoperation zum addieren.
+ * Definiert Rechenoperation zum dividieren.
  * @author markus
  */
-public class Addieren extends ARechenoperation
+public class Dividieren extends ARechenoperation
 {
 
-    public Addieren()
+    public Dividieren()
     {
-        super("+");
+        super("/");
     }
+
     /**
-     * Addiert zwei Parameter.
+     * Dividiert
      * @param eingabe
      * @param eingabe2
      * @return 
@@ -25,7 +26,7 @@ public class Addieren extends ARechenoperation
     @Override
     public double ausfuehren(double eingabe, double eingabe2)
     {
-        return eingabe + eingabe2;
+        return eingabe/eingabe2;
     }
     
 }

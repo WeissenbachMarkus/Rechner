@@ -6,7 +6,7 @@
 package com.mycompany.rechner;
 
 /**
- *
+ * Definiert Rechenoperation zum subrahieren.
  * @author markus
  */
 public class Subtrahieren extends ARechenoperation

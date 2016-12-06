@@ -6,7 +6,7 @@
 package com.mycompany.rechner;
 
 /**
- *
+ * Schnittstelle Ausgabe
  * @author markus
  */
 public interface IOutput

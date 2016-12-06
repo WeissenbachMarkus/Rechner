@@ -5,7 +5,7 @@
  */
 package com.mycompany.rechner;
 /**
- *
+ * Schnittstelle Rechenoperation
  * @author markus
  */
 public interface IRechenoperation

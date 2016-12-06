@@ -6,7 +6,7 @@
 package com.mycompany.rechner;
 
 /**
- *
+ * Schnittstelle Eingabe
  * @author markus
  */
 public interface IEingabe

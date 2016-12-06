@@ -6,12 +6,16 @@
 package com.mycompany.rechner;
 
 /**
- *
+ * Ausgabe
  * @author markus
  */
 public class Output implements IOutput
 {
 
+    /**
+     * Gibt das Ergebnis aus
+     * @param ergebnis 
+     */
     @Override
     public void ausfuehren(double ergebnis)
     {

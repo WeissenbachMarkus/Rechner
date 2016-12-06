@@ -6,7 +6,7 @@
 package com.mycompany.rechner;
 
 /**
- *
+ * Abstrakte Klasse um die Eigenschaft operator zu deklariern
  * @author markus
  */
 public abstract class ARechenoperation implements IRechenoperation
