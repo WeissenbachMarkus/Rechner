@@ -5,8 +5,7 @@
  */
 package com.mycompany.rechner;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -17,11 +16,11 @@ public class Main
 
     /**
      * Main
-     * @param args 
+     * @param args parameter
      */
     public static void main(String[] args)
     {
-        Rechner rechner=new Rechner(new Eingabe(), new Output(),new RechenoperatoionsFactory());  
+        Rechner rechner=new Rechner(new Eingabe(new EingabeUeberpruefung()), new Output(),new RechenoperatoionsFactory());  
         try
         {
             rechner.rechnen();

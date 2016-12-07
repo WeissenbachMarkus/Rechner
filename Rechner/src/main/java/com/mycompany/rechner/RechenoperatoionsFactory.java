@@ -15,13 +15,11 @@ import java.util.stream.Collectors;
  *
  * @author markus
  */
-public class RechenoperatoionsFactory
-{
+public class RechenoperatoionsFactory {
 
     private ArrayList<ARechenoperation> rechenoperationen;
 
-    public RechenoperatoionsFactory()
-    {
+    public RechenoperatoionsFactory() {
         this.rechenoperationen = new ArrayList<>();
         rechenoperationen.add(new Addieren());
         rechenoperationen.add(new Subtrahieren());
@@ -29,12 +27,9 @@ public class RechenoperatoionsFactory
         rechenoperationen.add(new Multiplizieren());
     }
 
-    public ARechenoperation liefereRechenoperation(String operator) throws Exception
-    {
-        for (ARechenoperation rechenoperation : this.rechenoperationen)
-        {
-            if (rechenoperation.getOperator().equals(operator))
-            {
+    public ARechenoperation liefereRechenoperation(String operator) throws Exception {
+        for (ARechenoperation rechenoperation : this.rechenoperationen) {
+            if (rechenoperation.getOperator().equals(operator)) {
                 return rechenoperation;
             }
         }
@@ -42,11 +37,18 @@ public class RechenoperatoionsFactory
         throw new Exception("Eingegebner Operant nicht verfügbar");
     }
 
-    public ArrayList<ARechenoperation> getRechenoperationen()
-    {
+    public ArrayList<ARechenoperation> getRechenoperationen() {
         return rechenoperationen;
     }
 
-    
+    public ArrayList<String> getOperatoren() {
+        ArrayList<String> operatoren = new ArrayList<>();
+
+        for (ARechenoperation rechenoperation : this.rechenoperationen) {
+
+            operatoren.add(rechenoperation.getOperator());
+        }
+        return operatoren;
+    }
 
 }

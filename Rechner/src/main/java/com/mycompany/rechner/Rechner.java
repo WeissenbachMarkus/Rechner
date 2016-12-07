@@ -30,7 +30,7 @@ public class Rechner
 
     /**
      * führt Eingabe, zuständige Rechenoperation und Ausgabe zusammen
-     * @throws java.lang.Exception
+     * @throws java.lang.Exception Fehler ungültige Eingabe
      */
     public void rechnen() throws Exception
     {
@@ -38,7 +38,6 @@ public class Rechner
         ARechenoperation rechenoperation = this.factory.liefereRechenoperation(eingabe.getOperator());
         double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
         this.output.ausfuehren(ergebnis);
-
     }
 
 }

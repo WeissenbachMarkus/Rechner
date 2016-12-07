@@ -12,25 +12,23 @@ import java.util.Scanner;
  *
  * @author markus
  */
-public class Eingabe implements IEingabe
-{
+public class Eingabe implements IEingabe {
 
     private Scanner scan;
+    private IEingabeUeberpruefung EingabeUeberpruefung;
     private double input1, input2;
     private String operator;
 
-    public Eingabe()
-    {
+    public Eingabe(IEingabeUeberpruefung EingabeUeberpruefung) {
         this.scan = new Scanner(System.in);
-
+        this.EingabeUeberpruefung = EingabeUeberpruefung;
     }
 
     /**
      * Abfrage
      */
     @Override
-    public void abfrage()
-    {
+    public void abfrage() {
 
         System.out.println("Geben Sie eine Zahl ein:");
         this.input1 = EingabeUeberpruefung.doubleEingabe();
@@ -42,20 +40,17 @@ public class Eingabe implements IEingabe
     }
 
     @Override
-    public double getInput1()
-    {
+    public double getInput1() {
         return this.input1;
     }
 
     @Override
-    public double getInput2()
-    {
+    public double getInput2() {
         return this.input2;
     }
 
     @Override
-    public String getOperator()
-    {
+    public String getOperator() {
         return this.operator;
     }
 

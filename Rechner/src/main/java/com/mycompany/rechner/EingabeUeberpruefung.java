@@ -11,28 +11,19 @@ import java.util.Scanner;
  *
  * @author markus
  */
-public class EingabeUeberpruefung
-{
+public class EingabeUeberpruefung implements IEingabeUeberpruefung {
 
-    private static Scanner scan = new Scanner(System.in);
+    RechenoperatoionsFactory factory;
+    private Scanner scan;
 
-    public static int intEingabe()
-    {
-
-        while (!scan.hasNextInt())
-        {
-            scan.next();
-            System.out.println("Nur Ganzzahlen möglich!");
-        }
-        return scan.nextInt();
-
+    public EingabeUeberpruefung() {
+        this.factory = new RechenoperatoionsFactory();
+        this.scan = new Scanner(System.in);
     }
 
-    public static double doubleEingabe()
-    {
+    public double doubleEingabe() {
 
-        while (!scan.hasNextDouble())
-        {
+        while (!scan.hasNextDouble()) {
             scan.next();
             System.out.println("Nur Gleitkommazahlen möglich!");
         }
@@ -40,25 +31,20 @@ public class EingabeUeberpruefung
 
     }
 
-    public static String operatorEingabe()
-    {
+    public String operatorEingabe() {
         boolean istOperator = false;
         String operator = "";
-        RechenoperatoionsFactory factory = new RechenoperatoionsFactory();
 
-        while (!istOperator)
-        {
+        while (!istOperator) {
             operator = scan.next();
-            for (ARechenoperation operation : factory.getRechenoperationen())
-            {
-                if (operator.equals(operation.getOperator()))
-                {
+            for (String factoryOperator : factory.getOperatoren()) {
+                if (operator.equals(factoryOperator)) {
                     istOperator = true;
                 }
             }
-            if (!istOperator)
-            {
+            if (!istOperator) {
                 System.out.println("Nur Operatoren möglich!");
+                new Output().operatoren();
             }
         }
         return operator;
