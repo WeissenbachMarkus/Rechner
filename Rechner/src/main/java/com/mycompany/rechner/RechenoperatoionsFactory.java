@@ -5,12 +5,14 @@
  */
 package com.mycompany.rechner;
 
-
 import java.util.ArrayList;
-
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Factory für Rechenoperationsobjekte
+ *
  * @author markus
  */
 public class RechenoperatoionsFactory
@@ -29,14 +31,22 @@ public class RechenoperatoionsFactory
 
     public ARechenoperation liefereRechenoperation(String operator) throws Exception
     {
-       for (ARechenoperation rechenoperation : this.rechenoperationen)
+        for (ARechenoperation rechenoperation : this.rechenoperationen)
         {
             if (rechenoperation.getOperator().equals(operator))
             {
                 return rechenoperation;
             }
         }
-        
-       throw new Exception("Eingegebner Operant nicht verfügbar");
+
+        throw new Exception("Eingegebner Operant nicht verfügbar");
     }
+
+    public ArrayList<ARechenoperation> getRechenoperationen()
+    {
+        return rechenoperationen;
+    }
+
+    
+
 }

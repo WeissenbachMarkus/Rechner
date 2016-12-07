@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * Gibt das Ergebnis aus
+ *
  * @author markus
  */
 public class Eingabe implements IEingabe
@@ -31,18 +32,12 @@ public class Eingabe implements IEingabe
     public void abfrage()
     {
 
-        try
-        {
-            System.out.println("Geben Sie eine Zahl ein:");
-            this.input1 = this.scan.nextDouble();
-            System.out.println("Geben Sie einen Operator ein:");
-            this.operator = this.scan.next();
-            System.out.println("Geben Sie eine Zahl ein:");
-            this.input2 = this.scan.nextDouble();
-        } catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-        }
+        System.out.println("Geben Sie eine Zahl ein:");
+        this.input1 = EingabeUeberpruefung.doubleEingabe();
+        System.out.println("Geben Sie einen Operator ein:");
+        this.operator = EingabeUeberpruefung.operatorEingabe();
+        System.out.println("Geben Sie eine Zahl ein:");
+        this.input2 = EingabeUeberpruefung.doubleEingabe();
 
     }
 

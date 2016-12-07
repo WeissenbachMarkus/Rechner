@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 
 /**
  * Kompositionsklasse Eingabe, Rechneoperation, Ausgabe
+ *
  * @author markus
  */
 public class Rechner
@@ -28,22 +29,15 @@ public class Rechner
     }
 
     /**
-     * führt Eingabe, zuständige Rechenoperation
-     * und Ausgabe zusammen
+     * führt Eingabe, zuständige Rechenoperation und Ausgabe zusammen
+     * @throws java.lang.Exception
      */
-    public void rechnen()
+    public void rechnen() throws Exception
     {
         this.eingabe.abfrage();
-        ARechenoperation rechenoperation;
-        try
-        {
-            rechenoperation = this.factory.liefereRechenoperation(eingabe.getOperator());
-            double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
-            this.output.ausfuehren(ergebnis);
-        } catch (Exception ex)
-        {
-            System.out.println(ex.getMessage());
-        }
+        ARechenoperation rechenoperation = this.factory.liefereRechenoperation(eingabe.getOperator());
+        double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
+        this.output.ausfuehren(ergebnis);
 
     }
 
