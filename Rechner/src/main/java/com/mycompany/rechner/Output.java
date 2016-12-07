@@ -14,7 +14,7 @@ public class Output implements IOutput
 
     /**
      * Gibt das Ergebnis aus
-     * @param ergebnis 
+     * @param ergebnis  Ergebnis
      */
     @Override
     public void ausfuehren(double ergebnis)

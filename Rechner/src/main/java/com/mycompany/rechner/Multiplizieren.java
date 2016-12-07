@@ -19,9 +19,9 @@ public class Multiplizieren extends ARechenoperation
 
     /**
      * Multipliziert
-     * @param eingabe
-     * @param eingabe2
-     * @return 
+     * @param eingabe erste Zahl
+     * @param eingabe2 zweite Zahl
+     * @return Ergebnis
      */
     @Override
     public double ausfuehren(double eingabe, double eingabe2)

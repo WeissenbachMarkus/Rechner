@@ -6,7 +6,7 @@
 package com.mycompany.rechner;
 
 /**
- * Definiert Rechenoperation zum subrahieren.
+ * Definiert Rechenoperation zum subtrahieren.
  * @author markus
  */
 public class Subtrahieren extends ARechenoperation
@@ -20,9 +20,9 @@ public class Subtrahieren extends ARechenoperation
     /**
      * Subtrahiert zwei Parameter.
      *
-     * @param eingabe
-     * @param eingabe2
-     * @return
+     * @param eingabe erste Zahl
+     * @param eingabe2 zweite Zahl
+     * @return Ergebnis
      */
     @Override
     public double ausfuehren(double eingabe, double eingabe2)

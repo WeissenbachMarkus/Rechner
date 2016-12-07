@@ -9,11 +9,12 @@ package com.mycompany.rechner;
  *
  * @author markus
  */
-public class NewMain
+public class Main
 {
 
     /**
      * Main
+     * @param args 
      */
     public static void main(String[] args)
     {

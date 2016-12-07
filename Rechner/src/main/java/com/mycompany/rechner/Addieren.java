@@ -18,9 +18,9 @@ public class Addieren extends ARechenoperation
     }
     /**
      * Addiert zwei Parameter.
-     * @param eingabe
-     * @param eingabe2
-     * @return 
+     * @param eingabe erste Zahl
+     * @param eingabe2 zweite Zahl
+     * @return Ergebnis
      */
     @Override
     public double ausfuehren(double eingabe, double eingabe2)

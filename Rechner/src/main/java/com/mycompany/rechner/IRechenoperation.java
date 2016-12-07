@@ -14,9 +14,9 @@ public interface IRechenoperation
     /**
      * Führt implementierte Operation aus und liefert ein 
      * Ergebnis zurück
-     * @param eingabe
-     * @param eingabe2
-     * @return 
+     * @param eingabe erste Zahl
+     * @param eingabe2 zweite Zahl
+     * @return Ergebnis
      */
     double ausfuehren(double eingabe, double eingabe2);
 }

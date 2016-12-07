@@ -25,7 +25,7 @@ public class Eingabe implements IEingabe
     }
 
     /**
-     *
+     * Abfrage
      */
     @Override
     public void abfrage()
