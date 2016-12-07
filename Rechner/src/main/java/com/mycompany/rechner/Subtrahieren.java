@@ -7,13 +7,12 @@ package com.mycompany.rechner;
 
 /**
  * Definiert Rechenoperation zum subtrahieren.
+ *
  * @author markus
  */
-public class Subtrahieren extends ARechenoperation
-{
+public class Subtrahieren extends ARechenoperation {
 
-    public Subtrahieren()
-    {
+    public Subtrahieren() {
         super("-");
     }
 
@@ -25,8 +24,8 @@ public class Subtrahieren extends ARechenoperation
      * @return Ergebnis
      */
     @Override
-    public double ausfuehren(double eingabe, double eingabe2)
-    {
+    public double ausfuehren(double eingabe, double eingabe2) {
+
         return eingabe - eingabe2;
     }
 

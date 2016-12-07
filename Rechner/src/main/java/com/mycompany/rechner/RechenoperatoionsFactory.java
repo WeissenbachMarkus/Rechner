@@ -33,7 +33,6 @@ public class RechenoperatoionsFactory {
                 return rechenoperation;
             }
         }
-
         throw new Exception("Eingegebner Operant nicht verfügbar");
     }
 

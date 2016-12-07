@@ -14,15 +14,13 @@ import java.util.logging.Logger;
  *
  * @author markus
  */
-public class Rechner
-{
+public class Rechner {
 
     private IEingabe eingabe;
     private IOutput output;
     private RechenoperatoionsFactory factory;
 
-    public Rechner(IEingabe eingabe, IOutput output, RechenoperatoionsFactory factory)
-    {
+    public Rechner(IEingabe eingabe, IOutput output, RechenoperatoionsFactory factory) {
         this.eingabe = eingabe;
         this.output = output;
         this.factory = factory;
@@ -30,14 +28,24 @@ public class Rechner
 
     /**
      * führt Eingabe, zuständige Rechenoperation und Ausgabe zusammen
+     *
      * @throws java.lang.Exception Fehler ungültige Eingabe
      */
-    public void rechnen() throws Exception
-    {
+    public void rechnen() throws Exception {
         this.eingabe.abfrage();
         ARechenoperation rechenoperation = this.factory.liefereRechenoperation(eingabe.getOperator());
-        double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
-        this.output.ausfuehren(ergebnis);
+        try {
+            double ergebnis = rechenoperation.ausfuehren(eingabe.getInput1(), eingabe.getInput2());
+            this.output.ausfuehren(ergebnis);
+        } catch (Exception e) {
+
+            if (e.getMessage().contains("java.lang.RuntimeException: Uncompilable source code - illegal start of expression")) {
+                throw new DivideByZero("Dividiert durch Null!");
+            } else {
+                System.out.println(e.getMessage());
+            }
+        }
+
     }
 
 }
